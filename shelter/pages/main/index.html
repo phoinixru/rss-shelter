@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cozy House</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="../../assets/icons/favicon.svg">
+    <link rel="icon" href="../../assets/icons/favicon.svg" />
     <script src="script.js"></script>
   </head>
   <body class="page-main">
@@ -26,7 +26,7 @@
               >
             </li>
             <li class="navigation__item">
-              <a class="navigation__link" href="#pets">Our pets</a>
+              <a class="navigation__link" href="../pets/">Our pets</a>
             </li>
             <li class="navigation__item">
               <a class="navigation__link" href="#help">Help the shelter</a>
@@ -148,7 +148,7 @@
           </div>
 
           <div class="the_rest">
-            <a href="/pets/" class="button button-primary"
+            <a href="../pets/" class="button button-primary"
               >Get to know the rest</a
             >
           </div>
@@ -180,10 +180,14 @@
         <div class="section__content">
           <h3 class="section__title">You can also make&nbsp;a&nbsp;donation</h3>
           <div class="donate">
-            <h5 class="donate__bank">Name of the bank / Type of bank account</h5>
+            <h5 class="donate__bank">
+              Name of the bank / Type of bank account
+            </h5>
             <p class="donate__card">
-              <i class="icon-card"></i>
-              8380 2880 8028 8791 7435
+              <a class="button button-primary" href="#">
+                <i class="icon-card"></i>
+                8380 2880 8028 8791 7435
+              </a>
             </p>
             <p class="donate__legal s">
               Legal information and lorem ipsum dolor sit amet, consectetur
@@ -216,11 +220,15 @@
           <ul class="address__list">
             <li class="address__list__item">
               <address>
-                1 Central Street, Boston (entrance from the store)
+                <a href="#" target="_blank"
+                  >1 Central Street, Boston (entrance from the store)</a
+                >
               </address>
             </li>
             <li class="address__list__item">
-              <address>18 South Park, London</address>
+              <address>
+                <a href="#" target="_blank">18 South Park, London</a>
+              </address>
             </li>
           </ul>
         </section>

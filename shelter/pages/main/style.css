@@ -238,13 +238,15 @@ body {
 }
 
 .donate__card {
-  display: inline-block;
-  padding: 10px 15px;
   margin: 20px 0;
+}
+
+.donate__card a {
+  display: inline-block;
+  padding: 8px 13px;
   border-radius: 9px;
   font: 20px/17px var(--ff-serif);
   letter-spacing: 0.06em;
-  background: var(--color-primary);
 }
 
 .donate__card .icon-card {
