@@ -1,0 +1,56 @@
+@import url('../../assets/styles/normalize.css');
+@import url('../../assets/styles/layout.css');
+@import url('../../assets/styles/components.css');
+@import url('../../assets/styles/typography.css');
+@import url('../../assets/styles/colors.css');
+
+.logo__title {
+  color: var(--color-primary)
+}
+
+.logo__subtitle {
+  color: var(--color-light-xl)
+}
+
+/* Header navigation */
+.navigation__link {
+  color: var(--color-dark-s);
+}
+
+.navigation__link:hover {
+  color: var(--color-light-s);
+}
+
+.navigation__link:active,
+.navigation__link--active {
+  color: var(--color-light-s);
+}
+
+/* Start screen */
+.start-screen {
+  background: url('../../assets/backgrounds/start-screen-puppy.png') 100% 100% no-repeat;
+  background-size: 698px;
+  grid-column: span 2;
+  display: flex;
+  height: 818px;
+}
+
+.start-screen__content {
+  justify-self: center;
+  align-self: center;
+}
+
+.start-screen__content {
+  width: 460px;
+  padding-top: 10px;
+}
+
+.start-screen__content h1 {
+  margin: 0 150px 0 0;
+  color: var(--color-light-xl);
+}
+
+.start-screen__content p {
+  margin: 42px 0;
+  color: var(--color-dark-s);
+}
