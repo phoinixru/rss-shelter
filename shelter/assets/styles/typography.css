@@ -21,40 +21,40 @@ h5 {
 
 h1 {
   font-size: 44px;
-  line-height: 130%;
+  line-height: 57px;
   letter-spacing: normal;
 }
 
 h2 {
   font-size: 44px;
-  line-height: 130%;
+  line-height: 57px;
   letter-spacing: normal;
 }
 
 h3 {
   font-size: 35px;
-  line-height: 130%;
+  line-height: 45px;
 }
 
 h4 {
   font-size: 20px;
-  line-height: 115%;
+  line-height: 23px;
 }
 
 h5 {
   font-size: 15px;
-  line-height: 110%;
+  line-height: 17px;
 }
 
 p.l {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 24px;
 }
 
 p.s {
   font-style: italic;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 18px;
 }
 
 a {
