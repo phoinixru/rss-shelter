@@ -1,0 +1,77 @@
+:root {
+  --ff-serif: Georgia, 'Times New Roman', Times, serif;
+  --ff-sans-serif: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: var(--ff-sans-serif);
+  font-smooth: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--ff-serif);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 130%;
+  letter-spacing: normal;
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 130%;
+  letter-spacing: normal;
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 130%;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 115%;
+}
+
+h5 {
+  font-size: 15px;
+  line-height: 110%;
+}
+
+p.l {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+p.s {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo__title {
+  font: 32px/110% var(--ff-serif);
+  letter-spacing: 0.06em;
+}
+
+.logo__subtitle {
+  font: 13px/15px var(--ff-sans-serif);
+  letter-spacing: 0.1em;
+}
+
+.button {
+  font: 17px/130% var(--ff-serif);
+  letter-spacing: 0.06em;
+}

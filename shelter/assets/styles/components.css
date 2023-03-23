@@ -1,0 +1,37 @@
+.logo {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.logo__title {
+  display: block;
+}
+
+.logo__subtitle {
+  display: block;
+  padding: 10px 0 0 5px;
+}
+
+.navigation {
+  display: flex;
+  list-style: none;
+}
+
+.navigation__item {
+  margin-left: 35px;
+}
+
+.navigation__link {
+  display: block;
+  font-size: 15px;
+  line-height: 160%;
+}
+
+.button {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 13px 43px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 26px;
+}

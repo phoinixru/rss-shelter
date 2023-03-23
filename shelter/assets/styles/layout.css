@@ -1,0 +1,24 @@
+.wrapper {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.page-header .wrapper {
+  box-sizing: border-box;
+  padding: 30px 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60px;
+  grid-template-areas: "logo navigation";
+  grid-auto-flow: row;
+}
+
+.header__logo {
+  grid-area: logo;
+}
+
+.header__navigation {
+  grid-area: navigation;
+  align-self: center;
+  justify-self: end;
+}
