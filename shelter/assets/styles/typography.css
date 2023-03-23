@@ -62,7 +62,7 @@ a {
 }
 
 .logo__title {
-  font: 32px/110% var(--ff-serif);
+  font: 32px/35px var(--ff-serif);
   letter-spacing: 0.06em;
 }
 
@@ -72,6 +72,11 @@ a {
 }
 
 .button {
-  font: 17px/130% var(--ff-serif);
+  font: 17px/23px var(--ff-serif);
+  letter-spacing: 0.06em;
+}
+
+.footer__link {
+  font: 20px/23px var(--ff-serif);
   letter-spacing: 0.06em;
 }

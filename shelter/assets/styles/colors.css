@@ -92,3 +92,11 @@ p {
 .section__title {
   color: var(--color-dark-l);
 }
+
+.footer__section__title {
+  color: var(--color-light-xl);
+}
+
+.footer__content a {
+  color: var(--color-primary);
+}

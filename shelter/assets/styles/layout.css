@@ -26,3 +26,68 @@ section .wrapper {
   align-self: center;
   justify-self: end;
 }
+
+.page-footer .wrapper {
+  padding: 40px 40px 0;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: row;
+  min-height: 310px;
+  background: url('../backgrounds/footer-puppy.png') 100% 100% no-repeat;
+  gap: 0 140px;
+}
+
+.footer__section {
+  max-width: 298px;
+  padding-top: 0;
+}
+
+.footer__section__title {
+  margin: 17px 0;
+}
+
+.contacts__list {
+  list-style: none;
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+.contacts__list__item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 72px;
+}
+
+.contacts__list__item .icon {
+  height: 32px;
+  background-position: 0 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icon-mail {
+  width: 40px;
+  background-image: url('../icons/mail.svg');
+}
+
+.icon-phone {
+  width: 40px;
+  background-image: url('../icons/phone.svg');
+}
+
+.icon-pin {
+  width: 22px;
+  background-image: url('../icons/pin.svg');
+}
+
+.contacts__list a {
+  display: inline-block;
+}
+
+.contacts__list a em {
+  font-style: normal;
+  display: block;
+}

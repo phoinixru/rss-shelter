@@ -5,9 +5,6 @@
 @import url('../../assets/styles/colors.css');
 @import url('../../assets/styles/effects.css');
 
-body {
-  height: 3800px;
-}
 
 .logo__title {
   color: var(--color-primary)
