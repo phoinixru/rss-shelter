@@ -3,6 +3,7 @@
 @import url('../../assets/styles/components.css');
 @import url('../../assets/styles/typography.css');
 @import url('../../assets/styles/colors.css');
+@import url('../../assets/styles/effects.css');
 
 body {
   height: 3800px;
