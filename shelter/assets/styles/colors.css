@@ -20,6 +20,10 @@ a {
   color: var(--color-dark-3xl);
 }
 
+p {
+  color: var(--color-dark-xl);
+}
+
 /* Section backgrounds */
 .bg-alternate {
   background-color: var(--color-light-l);
@@ -36,6 +40,10 @@ a {
 }
 
 /* Buttons */
+.button {
+  transition: all 0.5s;
+}
+
 .button-primary {
   border-color: var(--color-primary);
   background: var(--color-primary);
@@ -78,4 +86,8 @@ a {
 
 .navigation__link--active:after {
   visibility: visible;
+}
+
+.section__title {
+  color: var(--color-dark-l);
 }

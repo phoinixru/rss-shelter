@@ -34,4 +34,13 @@
   border-width: 2px;
   border-style: solid;
   border-radius: 26px;
+  cursor: pointer;
+}
+
+.button__pagination {
+  padding: 0;
+  height: 52px;
+  width: 52px;
+  text-align: center;
+  line-height: 52px;
 }
