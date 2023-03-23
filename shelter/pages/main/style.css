@@ -54,3 +54,24 @@
   margin: 42px 0;
   color: var(--color-dark-s);
 }
+
+/* Section: about */
+.about .wrapper {
+  background: red;
+}
+
+.about .section__content {
+  min-height: 408px;
+  margin: 0 175px;
+  padding-left: 420px;
+  background: green url('../../assets/backgrounds/about-pets.png') 0 0 no-repeat;
+}
+
+.about .section__title {
+  margin: 0;
+  padding-top: 15px;
+}
+
+.about p {
+  margin: 25px 0 0;
+}
