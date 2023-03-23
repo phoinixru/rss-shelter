@@ -161,7 +161,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  font: 20px/115% var(--ff-serif);
+  font: 20px/23px var(--ff-serif);
   letter-spacing: 0.06em;
   color: var(--color-dark-l)
 }
@@ -212,4 +212,50 @@ body {
 
 .icon-sleeping-area {
   background-image: url('../../assets/icons/icon-sleeping-area.svg');
+}
+
+/* Section: donations */
+.donations .section__content {
+  min-height: 261px;
+  margin: 0 143px;
+  padding-left: 535px;
+  background: url('../../assets/backgrounds/donation-dog.png') 0 50% no-repeat;
+}
+
+.donations .section__title {
+  margin: 0;
+}
+
+.donate {
+  margin-top: 20px;
+}
+
+.donate__bank {
+  margin: 0;
+  font: 15px/17px var(--ff-serif);
+  color: var(--color-dark-l);
+}
+
+.donate__card {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 20px 0;
+  border-radius: 9px;
+  font: 20px/17px var(--ff-serif);
+  letter-spacing: 0.06em;
+  background: var(--color-primary);
+}
+
+.donate__card .icon-card {
+  display: inline-block;
+  width: 30px;
+  height: 23px;
+  background: url('../../assets/icons/credit-card.svg');
+  vertical-align: -5px;
+  margin-right: 10px;
+}
+
+.donate__legal {
+  margin: 0;
+  color: var(--color-dark-m);
 }
