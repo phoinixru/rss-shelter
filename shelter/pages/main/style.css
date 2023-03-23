@@ -159,16 +159,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 55px 120px;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 60px 0 0 0;
   font: 20px/23px var(--ff-serif);
   letter-spacing: 0.06em;
-  color: var(--color-dark-l)
-}
-
-.help-items li {
-  margin: 60px 60px -4px;
+  color: var(--color-dark-l);
 }
 
 .help-items .icon {
