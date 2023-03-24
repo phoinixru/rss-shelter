@@ -68,6 +68,10 @@
   border-radius: 9px;
 }
 
+.pet__card:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
 .pet__link {
   display: block;
   padding-bottom: 30px;
@@ -117,6 +121,7 @@
 
 .slider__cards {
   flex-wrap: nowrap;
+  padding: 60px;
   gap: 90px;
   flex-direction: row;
   width: calc(270px * 3 + 180px);
