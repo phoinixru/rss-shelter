@@ -1,15 +1,13 @@
 .logo {
-  display: inline-block;
-  text-decoration: none;
+  display: block;
 }
 
 .logo__title {
-  display: block;
+  margin: 0;
 }
 
 .logo__subtitle {
-  display: block;
-  padding: 10px 0 0 5px;
+  margin: 10px 0 0 4px;
 }
 
 .navigation {
@@ -25,6 +23,10 @@
   display: block;
   font-size: 15px;
   line-height: 160%;
+}
+
+.navigation__link--active {
+  pointer-events: none;
 }
 
 .button {
@@ -114,12 +116,8 @@
 }
 
 .slider__cards {
-  display: flex;
   flex-wrap: nowrap;
   gap: 90px;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
   flex-direction: row;
   width: calc(270px * 3 + 180px);
   overflow: hidden;
@@ -129,6 +127,10 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.slider__nav svg {
+  vertical-align: 4px;
 }
 
 .slider__prev {
@@ -168,6 +170,5 @@
 
 .pagination__link--disabled,
 .pagination__link--active {
-  cursor: default;
   pointer-events: none;
 }

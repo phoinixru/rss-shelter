@@ -49,7 +49,7 @@
   padding-top: 10px;
 }
 
-.start-screen__content h1 {
+.start-screen__title {
   margin: 0 150px 0 0;
   color: var(--color-light-xl);
 }
