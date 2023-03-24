@@ -41,10 +41,6 @@ p {
 }
 
 /* Buttons */
-.button {
-  transition: all 0.5s;
-}
-
 .button-primary {
   border-color: var(--color-primary);
   background: var(--color-primary);
