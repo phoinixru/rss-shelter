@@ -10,6 +10,6 @@ html {
   transition: all 0.5s;
 }
 
-.pet-photo:after {
+.pet__photo:after {
   transition: opacity 0.5s;
 }

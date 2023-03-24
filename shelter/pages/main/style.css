@@ -83,87 +83,10 @@
   margin: auto;
 }
 
-.slider {
-  position: relative;
-}
-
-.slider__cards {
-  display: flex;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  flex-direction: row;
-  width: calc(270px * 3 + 180px);
-  overflow: hidden;
-}
-
-.slider__card {
-  width: 270px;
-  margin-right: 90px;
-  background: var(--color-light-s);
-  border-radius: 9px;
-}
-
-.slider__link {
-  display: block;
-  padding-bottom: 30px;
-}
-
-.slider__link:hover .button {
-  background-color: var(--color-primary-light);
-}
-
-.slider__link:hover .pet-photo::after {
-  opacity: 0.03;
-}
-
-.slider__nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.slider__prev {
-  left: 0;
-}
-
-.slider__next {
-  right: 0;
-}
-
-
-.pets {
-  text-align: center;
+.our_pets .slider {
   margin: 60px 0;
 }
 
-.pet-photo {
-  position: relative;
-  border-radius: 9px 9px 0 0;
-  overflow: hidden;
-}
-
-.pet-photo::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #000000;
-  opacity: 0;
-}
-
-.pet-photo img {
-  display: block;
-}
-
-.pets .pet-name {
-  display: block;
-  margin: 30px 0;
-  font: 400 20px/23px var(--ff-serif);
-  letter-spacing: 0.06em;
-}
 
 /* Section: help */
 .help {

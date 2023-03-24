@@ -44,3 +44,97 @@
   text-align: center;
   line-height: 52px;
 }
+
+/* Pets component */
+.pets {
+  text-align: center;
+}
+
+.pets__cards {
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pet__card {
+  width: 270px;
+  background: var(--color-light-s);
+  border-radius: 9px;
+}
+
+.pet__link {
+  display: block;
+  padding-bottom: 30px;
+}
+
+.pet__link:hover .button {
+  background-color: var(--color-primary-light);
+}
+
+.pet__link:hover .pet__photo::after {
+  opacity: 0.03;
+}
+
+.pet__photo {
+  position: relative;
+  border-radius: 9px 9px 0 0;
+  overflow: hidden;
+}
+
+.pet__photo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0;
+}
+
+.pet__photo img {
+  display: block;
+}
+
+.pet__name {
+  display: block;
+  margin: 30px 0;
+  font: 400 20px/23px var(--ff-serif);
+  letter-spacing: 0.06em;
+}
+
+
+
+/* Slider modification of pets */
+.slider {
+  position: relative;
+}
+
+.slider__cards {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 90px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  flex-direction: row;
+  width: calc(270px * 3 + 180px);
+  overflow: hidden;
+}
+
+.slider__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider__prev {
+  left: 0;
+}
+
+.slider__next {
+  right: 0;
+}
