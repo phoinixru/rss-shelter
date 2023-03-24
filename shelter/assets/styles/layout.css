@@ -1,11 +1,17 @@
+html {
+  min-width: 1263px;
+}
+
 .wrapper {
   box-sizing: border-box;
-  width: 1280px;
+  width: 1260px;
   margin: auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .page-header .wrapper {
-  padding: 30px 40px 0;
+  padding-top: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 60px;
@@ -14,7 +20,8 @@
 }
 
 section .wrapper {
-  padding: 80px 40px 100px;
+  padding-top: 80px;
+  padding-bottom: 100px;
 }
 
 .header__logo {
@@ -28,7 +35,7 @@ section .wrapper {
 }
 
 .page-footer .wrapper {
-  padding: 40px 40px 0;
+  padding-top: 40px;
 }
 
 .footer__content {

@@ -31,10 +31,9 @@
 /* Start screen */
 .start-screen {
   background: url('../../assets/backgrounds/start-screen-puppy.png') 100% 100% no-repeat;
-  background-size: 698px;
   grid-column: span 2;
   display: flex;
-  height: 818px;
+  min-height: 818px;
 }
 
 .start-screen__content {
@@ -101,9 +100,21 @@
 .slider__card {
   width: 270px;
   margin-right: 90px;
-  padding-bottom: 30px;
   background: var(--color-light-s);
   border-radius: 9px;
+}
+
+.slider__link {
+  display: block;
+  padding-bottom: 30px;
+}
+
+.slider__link:hover .button {
+  background-color: var(--color-primary-light);
+}
+
+.slider__link:hover .pet-photo::after {
+  opacity: 0.03;
 }
 
 .slider__nav {
@@ -127,8 +138,20 @@
 }
 
 .pet-photo {
+  position: relative;
   border-radius: 9px 9px 0 0;
   overflow: hidden;
+}
+
+.pet-photo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0;
 }
 
 .pet-photo img {
