@@ -12,6 +12,7 @@ html {
 
 .page-header .wrapper {
   padding-top: 30px;
+  padding-bottom: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 60px;
@@ -19,7 +20,8 @@ html {
   grid-auto-flow: row;
 }
 
-section .wrapper {
+section .wrapper,
+main .wrapper {
   padding-top: 80px;
   padding-bottom: 100px;
 }
@@ -32,6 +34,12 @@ section .wrapper {
   grid-area: navigation;
   align-self: center;
   justify-self: end;
+}
+
+.page__title {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto 60px;
 }
 
 .page-footer .wrapper {

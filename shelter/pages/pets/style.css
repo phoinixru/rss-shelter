@@ -5,3 +5,6 @@
 @import url('../../assets/styles/colors.css');
 @import url('../../assets/styles/effects.css');
 
+.pets .pagination {
+  margin-top: 60px;
+}

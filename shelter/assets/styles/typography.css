@@ -19,12 +19,7 @@ h5 {
   letter-spacing: 0.06em;
 }
 
-h1 {
-  font-size: 44px;
-  line-height: 57px;
-  letter-spacing: normal;
-}
-
+h1,
 h2 {
   font-size: 44px;
   line-height: 57px;
@@ -71,12 +66,24 @@ a {
   letter-spacing: 0.1em;
 }
 
+.page__title {
+  font-size: 35px;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+}
+
 .button {
   font: 17px/22px var(--ff-serif);
   letter-spacing: 0.06em;
 }
 
 .footer__link {
+  font: 20px/23px var(--ff-serif);
+  letter-spacing: 0.06em;
+}
+
+/* Pagination */
+.pagination {
   font: 20px/23px var(--ff-serif);
   letter-spacing: 0.06em;
 }

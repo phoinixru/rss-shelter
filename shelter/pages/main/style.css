@@ -5,13 +5,16 @@
 @import url('../../assets/styles/colors.css');
 @import url('../../assets/styles/effects.css');
 
+.page-header .wrapper {
+  padding-bottom: 0;
+}
 
 .logo__title {
-  color: var(--color-primary)
+  color: var(--color-primary);
 }
 
 .logo__subtitle {
-  color: var(--color-light-xl)
+  color: var(--color-light-xl);
 }
 
 /* Header navigation */
