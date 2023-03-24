@@ -14,7 +14,7 @@
 }
 
 body {
-  background: var(--color-light-xl);
+  background: var(--color-light-l);
 }
 
 a {
@@ -27,7 +27,7 @@ p {
 
 /* Section backgrounds */
 .bg-alternate {
-  background-color: var(--color-light-l);
+  background-color: var(--color-light-xl);
 }
 
 .page-main .page-header {
