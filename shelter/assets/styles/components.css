@@ -64,11 +64,12 @@
 
 .pet__card {
   width: 270px;
-  background: var(--color-light-s);
+  background: var(--color-light-xl);
   border-radius: 9px;
 }
 
 .pet__card:hover {
+  background-color: var(--color-light-s);
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
@@ -89,17 +90,6 @@
   position: relative;
   border-radius: 9px 9px 0 0;
   overflow: hidden;
-}
-
-.pet__photo::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #000000;
-  opacity: 0;
 }
 
 .pet__photo img {

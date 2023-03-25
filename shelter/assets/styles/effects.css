@@ -15,9 +15,9 @@ html {
 }
 
 .pet__card {
-  transition: box-shadow 0.5s;
+  transition: all 0.5s;
 }
 
-.pet__photo:after {
-  transition: opacity 0.5s;
+.footer__content a {
+  transition: color 0.5s;
 }
