@@ -35,13 +35,10 @@
 }
 
 .start-screen__content {
-  justify-self: center;
-  align-self: center;
-}
-
-.start-screen__content {
   width: 460px;
   padding-top: 10px;
+  justify-self: center;
+  align-self: center;
 }
 
 .start-screen__title {
@@ -50,7 +47,7 @@
 }
 
 .start-screen__content p {
-  margin: 42px 0;
+  margin: 40px 0;
   color: var(--color-dark-s);
 }
 
