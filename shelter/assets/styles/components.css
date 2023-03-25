@@ -74,16 +74,15 @@
 }
 
 .pet__link {
-  display: block;
+  display: flex;
   padding-bottom: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px 0;
 }
 
 .pet__link:hover .button {
   background-color: var(--color-primary-light);
-}
-
-.pet__link:hover .pet__photo::after {
-  opacity: 0.03;
 }
 
 .pet__photo {
@@ -98,7 +97,6 @@
 
 .pet__name {
   display: block;
-  margin: 30px 0;
   font: 400 20px/23px var(--ff-serif);
   letter-spacing: 0.06em;
 }
