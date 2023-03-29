@@ -1,0 +1,31 @@
+
+/* Start screen */
+.start-screen {
+  grid-column: span 2;
+  display: flex;
+  min-height: 808px;
+  margin-top: 10px;
+  background: url("../../assets/backgrounds/start-screen-puppy.png") 100% 100% no-repeat;
+}
+
+.start-screen__content {
+  width: 460px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 42px;
+}
+
+.start-screen__content>* {
+  margin: 0;
+}
+
+.start-screen__title {
+  margin-right: 150px;
+  color: var(--color-light-xl);
+}
+
+.start-screen__content p {
+  color: var(--color-dark-s);
+}

@@ -1,0 +1,24 @@
+html {
+  min-width: 1260px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-light-l);
+}
+
+a {
+  color: var(--color-dark-3xl);
+}
+
+p {
+  color: var(--color-dark-xl);
+}
+
+/* Section backgrounds */
+.bg-alternate {
+  background-color: var(--color-light-xl);
+}

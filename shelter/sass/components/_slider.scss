@@ -1,0 +1,31 @@
+/* Slider modification of pets */
+.slider {
+  position: relative;
+}
+
+.slider__cards {
+  flex-wrap: nowrap;
+  padding: 60px;
+  gap: 90px;
+  flex-direction: row;
+  width: calc(270px * 3 + 180px);
+  overflow: hidden;
+}
+
+.slider__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider__nav svg {
+  vertical-align: 4px;
+}
+
+.slider__prev {
+  left: 0;
+}
+
+.slider__next {
+  right: 0;
+}

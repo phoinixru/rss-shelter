@@ -1,0 +1,29 @@
+.page-header .wrapper {
+  padding-bottom: 0;
+}
+
+.header-logo {
+  pointer-events: none;
+}
+
+.logo__title {
+  color: var(--color-primary);
+}
+
+.logo__subtitle {
+  color: var(--color-light-xl);
+}
+
+/* Header navigation */
+.navigation__link {
+  color: var(--color-dark-s);
+}
+
+.navigation__link:hover {
+  color: var(--color-light-s);
+}
+
+.navigation__link:active,
+.navigation__link--active {
+  color: var(--color-light-s);
+}

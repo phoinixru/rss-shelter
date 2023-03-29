@@ -1,0 +1,31 @@
+
+/* Section: help */
+.help {
+  text-align: center;
+}
+
+.help .section__title {
+  max-width: 450px;
+  margin: 0 auto 60px;
+}
+
+.help-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 55px 120px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font: 20px/23px var(--ff-serif);
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+}
+
+.help-items .icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 30px;
+  background-size: contain;
+}

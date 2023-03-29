@@ -1,0 +1,36 @@
+.header-logo {
+  grid-area: logo;
+  justify-self: left;
+}
+
+
+/* Logo */
+.logo {
+  display: block;
+}
+
+.logo__title {
+  margin: 0;
+}
+
+.logo__title {
+  transition: all 0.5s;
+}
+
+.logo__subtitle {
+  margin: 10px 0 0 4px;
+}
+
+.logo {
+  &__title {
+    color: var(--color-dark-l)
+  }
+
+  &__subtitle {
+    color: var(--color-dark-3xl)
+  }
+}
+
+.header-logo:hover .logo__title {
+  color: var(--color-dark-3xl);
+}
