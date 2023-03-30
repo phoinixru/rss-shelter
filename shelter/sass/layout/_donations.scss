@@ -1,0 +1,78 @@
+/* Section: donations */
+.donations__content {
+  --bg-image-height-mobile: #{responsive-size(135, 261, mobile)};
+  --padding-bottom-mobile: #{responsive-size(135 + 42, 261 + 60, mobile)};
+
+  background: url("../../assets/backgrounds/donation-dog.png") 50% 100% no-repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 0 1rem var(--padding-bottom-mobile);
+  background-size: auto var(--bg-image-height-mobile);
+
+  @include mq($from: desktop) {
+    min-height: 26.1rem;
+    padding-left: 53.5rem;
+    margin: 0 14.3rem;
+    background-position: 0 50%;
+  }
+
+  &>* {
+    margin: 0;
+  }
+}
+
+.donations__title {
+  margin: 0;
+}
+
+.donate__bank {
+  margin: 0;
+  font-family: var(--ff-serif);
+  @include font(1.5rem, 2.4rem);
+  color: var(--color-dark-l);
+  text-align: center;
+  letter-spacing: normal;
+
+  @include mq($from: tablet) {
+    @include font(1.5rem, 1.7rem);
+    text-align: left;
+  }
+}
+
+.donate__card {
+  a {
+    font-family: var(--ff-serif);
+    @include font(1.5rem, 1.7rem);
+
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-width: 0;
+    border-radius: 9px;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+
+    @include mq($from: tablet) {
+      font-size: 2rem;
+    }
+  }
+
+  .icon-credit-card {
+    display: inline-block;
+    width: 30px;
+    height: 23px;
+  }
+}
+
+.donate__legal {
+  margin: 0;
+  text-align: justify;
+  color: var(--color-dark-m);
+
+  @include mq($from: tablet) {
+    text-align: left;
+  }
+}

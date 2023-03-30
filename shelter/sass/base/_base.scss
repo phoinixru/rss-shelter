@@ -25,7 +25,3 @@ p {
 .bg-alternate {
   background-color: var(--color-light-xl);
 }
-
-body>:nth-child(n+5) {
-  display: none;
-}
