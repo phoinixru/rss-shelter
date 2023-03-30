@@ -5,27 +5,52 @@
 
 .slider__cards {
   flex-wrap: nowrap;
-  padding: 60px;
-  gap: 90px;
+
   flex-direction: row;
-  width: calc(270px * 3 + 180px);
   overflow: hidden;
+
+  width: 320px;
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+  margin: auto;
+
+  @include mq($from: desktop) {
+    width: calc(270px * 3 + 180px);
+    padding: 6rem;
+    gap: 9rem;
+  }
+}
+
+.slider__pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  padding: 0 5.8rem;
+  margin: 0 auto 4.2rem;
+
+  @include mq($from: tablet) {
+    margin: 0;
+  }
 }
 
 .slider__nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mq($from: tablet) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
-.slider__nav svg {
-  vertical-align: 4px;
-}
+@include mq($from: tablet) {
+  .slider__prev {
+    left: 0;
+  }
 
-.slider__prev {
-  left: 0;
-}
-
-.slider__next {
-  right: 0;
+  .slider__next {
+    right: 0;
+  }
 }

@@ -1,43 +1,70 @@
 .page-footer {
   background: url('../backgrounds/noise_transparent@2x.png'),
-    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
+    #211F20;
+
+  .wrapper {
+    padding-top: 40px;
+    padding-bottom: 0;
+  }
 }
 
-.footer__section__title {
-  color: var(--color-light-xl);
-}
-
-.footer__content a {
-  color: var(--color-primary);
-}
-
-.footer__content a:hover {
-  color: var(--color-primary-light);
-}
-
-.footer__content a {
-  transition: color 0.5s;
-}
-
-.page-footer .wrapper {
-  padding-top: 40px;
-}
 
 .footer__content {
+  --bg-image-height-mobile: #{responsive-size(269, 310, mobile)};
+  --padding-bottom-mobile: #{responsive-size(269 + 40, 310 + 65, mobile)};
+
   display: flex;
-  flex-direction: row;
-  min-height: 310px;
-  background: url('../backgrounds/footer-puppy.png') 100% 100% no-repeat;
-  gap: 0 140px;
+  flex-direction: column;
+
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-image: url('../backgrounds/footer-puppy.png');
+
+  padding-bottom: var(--padding-bottom-mobile);
+  background-size: auto var(--bg-image-height-mobile);
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+    padding-bottom: 375px;
+    background-size: auto 310px;
+    background-position: center bottom;
+  }
+
+  @include mq($from: desktop) {
+    min-height: 310px;
+    gap: 0 140px;
+    padding-bottom: 0;
+    background-position: right bottom;
+  }
+
+
+  a {
+    color: var(--color-primary);
+    @include transition($property: color, $duration: 0.5s);
+
+    &:hover {
+      color: var(--color-primary-light);
+    }
+  }
 }
 
 .footer__section {
-  max-width: 298px;
   padding-top: 0;
+
+  @include mq($from: desktop) {
+    max-width: 298px;
+  }
 }
 
 .footer__section__title {
+  text-align: center;
   margin: 17px 0;
+  color: var(--color-light-xl);
+
+  @include mq($from: tablet) {
+    text-align: left;
+  }
 }
 
 
@@ -45,6 +72,15 @@
   list-style: none;
   margin: 20px 0 0 0;
   padding: 0;
+
+  a {
+    display: inline-block;
+  }
+
+  em {
+    font-style: normal;
+    display: block;
+  }
 }
 
 .contacts__list__item {
@@ -54,39 +90,13 @@
   height: 72px;
 }
 
-.contacts__list__item .icon {
-  height: 32px;
-  background-position: 0 50%;
-  background-size: contain;
-  background-repeat: no-repeat;
+.footer__link {
+  font: 2rem/2.3rem var(--ff-serif);
+  letter-spacing: 0.06em;
 }
 
 .footer__link .icon {
   display: inline-block;
   vertical-align: middle;
   margin-right: 14px;
-}
-
-.icon-mail {
-  width: 40px;
-  background-image: url('../icons/mail.svg');
-}
-
-.icon-phone {
-  width: 40px;
-  background-image: url('../icons/phone.svg');
-}
-
-.icon-pin {
-  width: 22px;
-  background-image: url('../icons/pin.svg');
-}
-
-.contacts__list a {
-  display: inline-block;
-}
-
-.contacts__list a em {
-  font-style: normal;
-  display: block;
 }

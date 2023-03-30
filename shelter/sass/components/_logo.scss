@@ -1,8 +1,16 @@
 .header-logo {
   grid-area: logo;
   justify-self: left;
-}
+  margin-left: 1rem;
 
+  @include mq($from: tablet) {
+    margin-left: 0;
+  }
+
+  .page-main & {
+    pointer-events: none;
+  }
+}
 
 /* Logo */
 .logo {
@@ -11,26 +19,28 @@
 
 .logo__title {
   margin: 0;
-}
+  font: 3.2rem/3.5rem var(--ff-serif);
+  color: var(--color-dark-l);
+  letter-spacing: 0.06em;
 
-.logo__title {
-  transition: all 0.5s;
+  @include transition();
+
+  .page-main & {
+    color: var(--color-primary);
+  }
+
+  .header-logo:hover & {
+    color: var(--color-dark-3xl);
+  }
 }
 
 .logo__subtitle {
-  margin: 10px 0 0 4px;
-}
-
-.logo {
-  &__title {
-    color: var(--color-dark-l)
-  }
-
-  &__subtitle {
-    color: var(--color-dark-3xl)
-  }
-}
-
-.header-logo:hover .logo__title {
+  margin: 1rem 0 0 0.4rem;
+  font: 1.3rem/1.5rem var(--ff-sans-serif);
   color: var(--color-dark-3xl);
+  letter-spacing: 0.1em;
+
+  .page-main & {
+    color: var(--color-light-xl);
+  }
 }

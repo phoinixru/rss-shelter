@@ -1,29 +1,66 @@
-
 /* Start screen */
 .start-screen {
-  grid-column: span 2;
+  --bg-image-height-mobile: #{responsive-size(271, 593, mobile)};
+  --padding-bottom-mobile: #{responsive-size(271 + 105, 593 + 100, mobile)};
+  --bg-image-height-tablet: #{responsive-size(593, 728, tablet)};
+
   display: flex;
-  min-height: 808px;
-  margin-top: 10px;
-  background: url("../../assets/backgrounds/start-screen-puppy.png") 100% 100% no-repeat;
+  width: 100%;
+  margin-top: 6rem;
+  background: url('../../assets/backgrounds/start-screen-puppy.png') 100% 100% no-repeat;
+  padding-bottom: 376px;
+  background-size: auto 271px;
+
+  @include mq($from: mobile) {
+    padding-bottom: var(--padding-bottom-mobile);
+    background-size: auto var(--bg-image-height-mobile);
+  }
+
+  @include mq($from: tablet) {
+    min-height: responsive-size(593, 808, tablet);
+    padding-bottom: 0;
+    background-size: auto var(--bg-image-height-tablet);
+  }
+
+  @include mq($from: desktop) {
+    min-height: 808px;
+    background-size: auto;
+  }
 }
 
 .start-screen__content {
-  width: 460px;
   align-self: center;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   gap: 42px;
-}
 
-.start-screen__content>* {
-  margin: 0;
+  text-align: center;
+
+  &>* {
+    margin: 0;
+  }
+
+  @include mq($from: tablet) {
+    text-align: left;
+    align-items: start;
+    width: 460px;
+    padding: 0;
+  }
 }
 
 .start-screen__title {
-  margin-right: 150px;
   color: var(--color-light-xl);
+
+  padding: 0 5rem;
+
+  @include mq($from: tablet) {
+    padding: 0;
+  }
+
+  @include mq($from: desktop) {
+    margin-right: 150px;
+  }
 }
 
 .start-screen__content p {

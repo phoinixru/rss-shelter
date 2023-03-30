@@ -1,20 +1,20 @@
 .wrapper {
-  box-sizing: border-box;
-  width: 1200px;
-  margin: auto;
-}
+  min-width: 300px;
+  max-width: 1200px;
+  overflow: hidden;
+  margin: 0 10px;
+  padding: 4.2rem 0;
 
-.page-header .wrapper {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 60px;
-  grid-template-areas: "logo navigation";
-}
+  @include mq($from: mobile) {
+    margin: 0 responsive-size(10, 30, mobile);
+  }
 
-section .wrapper,
-main .wrapper {
-  padding-top: 80px;
-  padding-bottom: 100px;
+  @include mq($from: tablet) {
+    padding: 8rem 0 10rem;
+    margin: 0 responsive-size(30, 40, tablet);
+  }
+
+  @include mq($from: desktop) {
+    margin: auto;
+  }
 }

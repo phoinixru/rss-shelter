@@ -16,3 +16,21 @@ $site-icons: ('credit-card', 'mail', 'phone', 'pin');
     background-image: url('../icons/#{$icon}.svg');
   }
 }
+
+
+/* Footer icons */
+.page-footer .icon {
+  height: 32px;
+  background-position: 0 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.icon-mail,
+.icon-phone {
+  width: 40px;
+}
+
+.icon-pin {
+  width: 22px;
+}

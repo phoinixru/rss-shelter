@@ -17,11 +17,13 @@
   width: 270px;
   background: var(--color-light-s);
   border-radius: 9px;
-}
 
-.pet__card:hover {
-  background-color: var(--color-light-xl);
-  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  @include transition();
+
+  &:hover {
+    background-color: var(--color-light-xl);
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
 }
 
 .pet__link {
@@ -30,28 +32,26 @@
   flex-direction: column;
   align-items: center;
   gap: 30px 0;
+
+  &:hover .button {
+    background-color: var(--color-primary-light);
+  }
 }
 
-.pet__link:hover .button {
-  background-color: var(--color-primary-light);
-}
 
 .pet__photo {
   position: relative;
   border-radius: 9px 9px 0 0;
   overflow: hidden;
+
+  img {
+    display: block;
+  }
 }
 
-.pet__photo img {
-  display: block;
-}
 
 .pet__name {
   display: block;
   font: 400 20px/23px var(--ff-serif);
   letter-spacing: 0.06em;
-}
-
-.pet__card {
-  transition: all 0.5s;
 }

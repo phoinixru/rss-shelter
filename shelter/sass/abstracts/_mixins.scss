@@ -1,3 +1,15 @@
-@mixin transition($property: all, $duration: 0.3s, $function: ease-in, $delay: 0s) {
-  transition: $property $sec $function $delay;
+@use 'mq' with ( //
+  $breakpoints: $breakpoints,
+  $show-breakpoints: $show-breakpoints,
+);
+
+@mixin transition($property: all, $duration: $transition-duration, $function: linear) {
+  transition: $property $duration $function;
+}
+
+@mixin font($size, $height, $weight: 400, $style: normal) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  font-style: $style;
 }
