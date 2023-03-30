@@ -10,11 +10,6 @@ body {
   letter-spacing: 0.06em;
 }
 
-@mixin font($size, $height) {
-  font-size: $size;
-  line-height: $height;
-}
-
 h1,
 h2 {
   @extend %heading;

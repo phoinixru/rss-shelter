@@ -7,9 +7,7 @@
   transition: $property $duration $function;
 }
 
-@mixin font($size, $height, $weight: 400, $style: normal) {
+@mixin font($size, $height) {
   font-size: $size;
   line-height: $height;
-  font-weight: $weight;
-  font-style: $style;
 }
