@@ -2,6 +2,8 @@
   align-self: center;
   justify-self: right;
 
+  font-family: var(--ff-sans-serif);
+
   @include mq($from: mobile) {
     width: 100%;
   }
@@ -13,20 +15,17 @@
 
 .navigation {
   display: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
   justify-content: space-between;
 
   @include mq($from: mobile) {
     // display: flex;
     width: 100%;
     flex-direction: column;
-    background: red;
     gap: 0;
   }
 
   @include mq($from: tablet) {
+    display: flex;
     width: auto;
     gap: 35px;
     flex-direction: row;

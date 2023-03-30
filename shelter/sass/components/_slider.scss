@@ -4,8 +4,8 @@
 }
 
 .slider__cards {
+  box-sizing: content-box;
   flex-wrap: nowrap;
-
   flex-direction: row;
   overflow: hidden;
 

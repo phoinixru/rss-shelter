@@ -19,11 +19,12 @@
 
 .logo__title {
   margin: 0;
-  font: 3.2rem/3.5rem var(--ff-serif);
-  color: var(--color-dark-l);
-  letter-spacing: 0.06em;
 
+  @include font(3.2rem, 3.5rem);
+  @include letter-spacing();
   @include transition();
+
+  color: var(--color-dark-l);
 
   .page-main & {
     color: var(--color-primary);
@@ -35,10 +36,12 @@
 }
 
 .logo__subtitle {
-  margin: 1rem 0 0 0.4rem;
-  font: 1.3rem/1.5rem var(--ff-sans-serif);
+  margin: 0.9rem 0 0 0.4rem;
+  font-family: var(--ff-sans-serif);
+  @include font(1.3rem, 1.5rem);
+  @include letter-spacing(0.1em);
+
   color: var(--color-dark-3xl);
-  letter-spacing: 0.1em;
 
   .page-main & {
     color: var(--color-light-xl);

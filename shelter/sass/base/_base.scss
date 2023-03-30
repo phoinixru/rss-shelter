@@ -21,6 +21,12 @@ p {
   color: var(--color-dark-xl);
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 /* Section backgrounds */
 .bg-alternate {
   background-color: var(--color-light-xl);

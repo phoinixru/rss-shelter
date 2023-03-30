@@ -11,3 +11,7 @@
   font-size: $size;
   line-height: $height;
 }
+
+@mixin letter-spacing($spacing: $letter-spacing){
+  letter-spacing: $spacing;
+}

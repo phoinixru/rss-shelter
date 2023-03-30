@@ -1,15 +1,15 @@
 /* Start screen */
 .start-screen {
-  --bg-image-height-mobile: #{responsive-size(271, 593, mobile)};
-  --padding-bottom-mobile: #{responsive-size(271 + 105, 593 + 100, mobile)};
+  --bg-image-height-mobile: #{responsive-size(272, 593, mobile)};
+  --padding-bottom-mobile: #{responsive-size(272 + 105, 593 + 100, mobile)};
   --bg-image-height-tablet: #{responsive-size(593, 728, tablet)};
 
   display: flex;
   width: 100%;
-  margin-top: 6rem;
+  padding: 6rem 0 37.7rem;
+  
   background: url('../../assets/backgrounds/start-screen-puppy.png') 100% 100% no-repeat;
-  padding-bottom: 376px;
-  background-size: auto 271px;
+  background-size: auto 27.2rem;
 
   @include mq($from: mobile) {
     padding-bottom: var(--padding-bottom-mobile);
@@ -18,11 +18,12 @@
 
   @include mq($from: tablet) {
     min-height: responsive-size(593, 808, tablet);
-    padding-bottom: 0;
+    padding: 0;
     background-size: auto var(--bg-image-height-tablet);
   }
 
   @include mq($from: desktop) {
+    margin-top: 1rem;
     min-height: 808px;
     background-size: auto;
   }
@@ -50,12 +51,14 @@
 }
 
 .start-screen__title {
+  @include letter-spacing();
   color: var(--color-light-xl);
 
   padding: 0 5rem;
 
   @include mq($from: tablet) {
     padding: 0;
+    @include letter-spacing(normal);
   }
 
   @include mq($from: desktop) {
