@@ -1,12 +1,4 @@
 .header-logo {
-  grid-area: logo;
-  justify-self: left;
-  margin-left: 1rem;
-
-  @include mq($from: tablet) {
-    margin-left: 0;
-  }
-
   .page-main & {
     pointer-events: none;
   }
@@ -14,12 +6,18 @@
 
 /* Logo */
 .logo {
-  display: block;
+  display: flex;
+  height: 6rem;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &>* {
+    margin: 0;
+  }
 }
 
 .logo__title {
-  margin: 0;
-
+  padding-top: 0.1rem;
   @include font(3.2rem, 3.5rem);
   @include letter-spacing();
   @include transition();
@@ -36,7 +34,7 @@
 }
 
 .logo__subtitle {
-  margin: 0.9rem 0 0 0.4rem;
+  margin-left: 0.4rem;
   font-family: var(--ff-sans-serif);
   @include font(1.3rem, 1.5rem);
   @include letter-spacing(0.1em);
