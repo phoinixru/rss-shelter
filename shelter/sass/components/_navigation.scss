@@ -1,7 +1,5 @@
 .header-navigation {
-  align-self: center;
-  justify-self: right;
-
+  display: none;
   font-family: var(--ff-sans-serif);
 
   @include mq($from: mobile) {
@@ -9,6 +7,7 @@
   }
 
   @include mq($from: tablet) {
+    display: block;
     width: auto;
   }
 }
@@ -27,8 +26,9 @@
   @include mq($from: tablet) {
     display: flex;
     width: auto;
-    gap: 35px;
+    gap: 3.57rem;
     flex-direction: row;
+    margin-bottom: 0.1rem;
   }
 }
 
@@ -44,7 +44,7 @@
   &::after {
     content: '';
     display: block;
-    height: 3px;
+    height: 0.3rem;
     background: var(--color-primary);
     visibility: hidden;
   }

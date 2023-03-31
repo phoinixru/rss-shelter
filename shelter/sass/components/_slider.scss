@@ -4,19 +4,22 @@
 }
 
 .slider__cards {
-  box-sizing: content-box;
   flex-wrap: nowrap;
   flex-direction: row;
   overflow: hidden;
 
-  width: 320px;
-  padding: 2rem 1.5rem;
-  gap: 1.5rem;
-  margin: auto;
+  width: 27rem;
+  padding: 2rem 0;
+  gap: 2.5rem;
+
+  @include mq($from: tablet) {
+    width: calc(270px * 2 + 11rem);
+    padding: 6rem 3.5rem;
+    gap: 4rem;
+  }
 
   @include mq($from: desktop) {
     width: calc(270px * 3 + 180px);
-    padding: 6rem;
     gap: 9rem;
   }
 }
@@ -24,7 +27,7 @@
 .slider__pagination {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 30rem;
   padding: 0 5.8rem;
   margin: 0 auto 4.2rem;
 
@@ -37,15 +40,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  @include mq($from: tablet) {
+@include mq($from: 430px) {
+  .slider__nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
-}
 
-@include mq($from: tablet) {
   .slider__prev {
     left: 0;
   }

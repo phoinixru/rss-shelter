@@ -1,21 +1,20 @@
 .page-header {
   background-color: var(--color-light-xl);
+  position: relative;
+  z-index: 1;
 
   .wrapper {
-    padding-top:3rem;
-    padding-bottom: 3rem;
+    padding: 3rem 1rem;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    overflow: hidden;
+    align-items: center;
+
+    @include mq($from: tablet) {
+      padding: 3rem 0;
+    }
   }
 
   .page-main & {
-    background: url('../backgrounds/noise_transparent@2x.png'),
-      radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
-
-      .wrapper {
-        padding-bottom: 0;
-      }
+    background-color: transparent;
   }
 }

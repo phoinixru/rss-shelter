@@ -628,27 +628,23 @@ ul {
   width: 22px;
 }
 
-.header-logo {
-  grid-area: logo;
-  justify-self: left;
-  margin-left: 1rem;
-}
-@media (min-width: 48em) {
-  .header-logo {
-    margin-left: 0;
-  }
-}
 .page-main .header-logo {
   pointer-events: none;
 }
 
 /* Logo */
 .logo {
-  display: block;
+  display: flex;
+  height: 6rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.logo > * {
+  margin: 0;
 }
 
 .logo__title {
-  margin: 0;
+  padding-top: 0.1rem;
   font-size: 3.2rem;
   line-height: 3.5rem;
   letter-spacing: 0.06em;
@@ -663,7 +659,7 @@ ul {
 }
 
 .logo__subtitle {
-  margin: 0.9rem 0 0 0.4rem;
+  margin-left: 0.4rem;
   font-family: var(--ff-sans-serif);
   font-size: 1.3rem;
   line-height: 1.5rem;
@@ -674,9 +670,38 @@ ul {
   color: var(--color-light-xl);
 }
 
+.burger-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 3rem;
+  height: 2.2rem;
+  z-index: 1;
+  transition: all 0.3s linear;
+}
+.burger-button i, .burger-button:before, .burger-button:after {
+  content: "";
+  height: 2px;
+  background: var(--color-primary);
+}
+.burger-button:before {
+  transform-origin: left top;
+}
+.burger-button:after {
+  transform-origin: right bottom;
+}
+@media (min-width: 48em) {
+  .burger-button {
+    display: none;
+  }
+}
+
+.burger-button:focus {
+  transform: rotate(90deg);
+}
+
 .header-navigation {
-  align-self: center;
-  justify-self: right;
+  display: none;
   font-family: var(--ff-sans-serif);
 }
 @media (min-width: 20em) {
@@ -686,6 +711,7 @@ ul {
 }
 @media (min-width: 48em) {
   .header-navigation {
+    display: block;
     width: auto;
   }
 }
@@ -705,8 +731,9 @@ ul {
   .navigation {
     display: flex;
     width: auto;
-    gap: 35px;
+    gap: 3.57rem;
     flex-direction: row;
+    margin-bottom: 0.1rem;
   }
 }
 
@@ -721,7 +748,7 @@ ul {
 .navigation__link::after {
   content: "";
   display: block;
-  height: 3px;
+  height: 0.3rem;
   background: var(--color-primary);
   visibility: hidden;
 }
@@ -855,19 +882,23 @@ ul {
 }
 
 .slider__cards {
-  box-sizing: content-box;
   flex-wrap: nowrap;
   flex-direction: row;
   overflow: hidden;
-  width: 320px;
-  padding: 2rem 1.5rem;
-  gap: 1.5rem;
-  margin: auto;
+  width: 27rem;
+  padding: 2rem 0;
+  gap: 2.5rem;
+}
+@media (min-width: 48em) {
+  .slider__cards {
+    width: calc(540px + 11rem);
+    padding: 6rem 3.5rem;
+    gap: 4rem;
+  }
 }
 @media (min-width: 80em) {
   .slider__cards {
     width: 990px;
-    padding: 6rem;
     gap: 9rem;
   }
 }
@@ -875,7 +906,7 @@ ul {
 .slider__pagination {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 30rem;
   padding: 0 5.8rem;
   margin: 0 auto 4.2rem;
 }
@@ -890,15 +921,13 @@ ul {
   align-items: center;
   justify-content: center;
 }
-@media (min-width: 48em) {
+
+@media (min-width: 26.875em) {
   .slider__nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
-}
-
-@media (min-width: 48em) {
   .slider__prev {
     left: 0;
   }
@@ -909,7 +938,6 @@ ul {
 .wrapper {
   min-width: 300px;
   max-width: 1200px;
-  overflow: hidden;
   margin: 0 10px;
   padding: 4.2rem 0;
 }
@@ -932,20 +960,22 @@ ul {
 
 .page-header {
   background-color: var(--color-light-xl);
+  position: relative;
+  z-index: 1;
 }
 .page-header .wrapper {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 1rem;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  overflow: hidden;
+  align-items: center;
+}
+@media (min-width: 48em) {
+  .page-header .wrapper {
+    padding: 3rem 0;
+  }
 }
 .page-main .page-header {
-  background: url("../backgrounds/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
-}
-.page-main .page-header .wrapper {
-  padding-bottom: 0;
+  background-color: transparent;
 }
 
 /* Page title */
@@ -970,7 +1000,7 @@ ul {
 .page-footer .wrapper {
   padding: 3rem 0 0;
 }
-@media (min-width: 48em) {
+@media (min-width: 80em) {
   .page-footer .wrapper {
     padding-top: 4rem;
   }
@@ -988,37 +1018,40 @@ ul {
 @media (min-width: 48em) {
   .footer__content {
     flex-direction: row;
-    padding-bottom: 37.5rem;
+    padding: 0 3.4rem 37.5rem;
     background-size: auto 31rem;
     background-position: center bottom;
+    gap: 0 6rem;
   }
 }
 @media (min-width: 80em) {
   .footer__content {
     min-height: 31rem;
     gap: 0 14rem;
-    padding-bottom: 0;
+    padding: 0;
     background-position: right bottom;
   }
 }
 
 .footer__section {
-  margin-bottom: 4rem;
+  margin: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.footer__section:last-child {
-  margin-bottom: 2rem;
+.footer__section:first-child {
+  margin-top: 0;
 }
 @media (min-width: 48em) {
   .footer__section {
     display: block;
+    margin: 0 0 -0.7rem;
   }
 }
 @media (min-width: 80em) {
   .footer__section {
     max-width: 299px;
+    margin: 0;
   }
 }
 
@@ -1026,11 +1059,13 @@ ul {
   margin: 0 0 4rem;
   text-align: center;
   color: var(--color-light-xl);
+  letter-spacing: 0.059em;
 }
 @media (min-width: 48em) {
   .footer__section__title {
-    margin: 2rem 0 3.3rem;
+    margin: 0 0 3.3rem;
     text-align: left;
+    letter-spacing: 0.06em;
   }
 }
 @media (min-width: 80em) {
@@ -1071,7 +1106,7 @@ ul {
 .contacts__link {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
   font-size: 2rem;
   line-height: 2.3rem;
   letter-spacing: 0.06em;
@@ -1091,40 +1126,45 @@ ul {
 
 /* Start screen */
 .start-screen {
+  padding-top: 12rem;
+  margin-top: -12rem;
+  background: url("../backgrounds/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+}
+@media (min-width: 80em) {
+  .start-screen {
+    padding-top: 18rem;
+  }
+}
+
+.start-screen .wrapper {
   --bg-image-height-mobile: calc(272px + (100vw - 320px) * 0.7165178571);
   --padding-bottom-mobile: calc(377px + (100vw - 320px) * 0.7053571429);
   --bg-image-height-tablet: calc(593px + (100vw - 768px) * 0.263671875);
   display: flex;
-  width: 100%;
-  padding: 6rem 0 37.7rem;
+  padding: 3rem 0 37.7rem;
   background: url("../../assets/backgrounds/start-screen-puppy.png") 100% 100% no-repeat;
   background-size: auto 27.2rem;
 }
 @media (min-width: 20em) {
-  .start-screen {
+  .start-screen .wrapper {
     padding-bottom: var(--padding-bottom-mobile);
     background-size: auto var(--bg-image-height-mobile);
   }
 }
-@media (min-width: 48em) {
-  .start-screen {
-    min-height: calc(593px + (100vw - 768px) * 0.419921875);
-    padding: 0;
-    background-size: auto var(--bg-image-height-tablet);
-  }
-}
 @media (min-width: 80em) {
-  .start-screen {
-    margin-top: 1rem;
-    min-height: 808px;
+  .start-screen .wrapper {
+    min-height: 72.8rem;
+    padding: 0;
     background-size: auto;
   }
 }
 
 .start-screen__content {
-  align-self: center;
+  max-width: 46rem;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  align-self: center;
   align-items: center;
   gap: 42px;
   text-align: center;
@@ -1132,12 +1172,15 @@ ul {
 .start-screen__content > * {
   margin: 0;
 }
-@media (min-width: 48em) {
+@media (min-width: 33.75em) {
   .start-screen__content {
     text-align: left;
     align-items: start;
-    width: 460px;
-    padding: 0;
+  }
+}
+@media (min-width: 80em) {
+  .start-screen__content {
+    margin: 0 0 8rem;
   }
 }
 
@@ -1146,20 +1189,29 @@ ul {
   color: var(--color-light-xl);
   padding: 0 5rem;
 }
-@media (min-width: 48em) {
+@media (min-width: 33.75em) {
   .start-screen__title {
     padding: 0;
-    letter-spacing: normal;
-  }
-}
-@media (min-width: 80em) {
-  .start-screen__title {
     margin-right: 150px;
+    font-size: 4.4rem;
+    line-height: 5.7rem;
+    letter-spacing: normal;
   }
 }
 
 .start-screen__content p {
   color: var(--color-dark-s);
+}
+
+@media (min-width: 33.75em) {
+  .start-screen__content a {
+    margin: auto;
+  }
+}
+@media (min-width: 80em) {
+  .start-screen__content a {
+    margin: 0;
+  }
 }
 
 /* Section: about */
@@ -1227,6 +1279,11 @@ ul {
   max-width: 45rem;
   margin: 0 auto 2.2rem;
 }
+@media (min-width: 48em) {
+  .our-pets__title {
+    margin-bottom: 0;
+  }
+}
 @media (min-width: 80em) {
   .our-pets__title {
     max-width: 40rem;
@@ -1260,20 +1317,25 @@ ul {
   letter-spacing: 0.06em;
   color: var(--color-dark-l);
 }
-@media (min-width: 32.5em) {
+@media (min-width: 34.375em) {
   .help-items {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 55px 60px;
   }
 }
-@media (min-width: 80em) {
+@media (min-width: 48em) {
+  .help-items {
+    gap: 5.5rem 6rem;
+    margin: 0 4rem;
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
+}
+@media (min-width: 62.5em) {
   .help-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5.5rem 12rem;
-    font-size: 2rem;
-    line-height: 2.3rem;
   }
 }
 .help-items .icon {
@@ -1302,11 +1364,18 @@ ul {
   background: url("../../assets/backgrounds/donation-dog.png") 50% 100% no-repeat;
   background-size: auto var(--bg-image-height-mobile);
 }
-@media (min-width: 80em) {
+@media (min-width: 25em) {
   .donations__content {
+    padding-right: calc(50% - 19rem);
+    padding-left: calc(50% - 19rem);
+  }
+}
+@media (min-width: 62.1875em) {
+  .donations__content {
+    width: 91.5rem;
     min-height: 26.1rem;
     padding: 0 0 0 53.5rem;
-    margin: 0 14.3rem;
+    margin: auto;
     background-position: 0 50%;
     background-size: auto;
   }
@@ -1318,7 +1387,7 @@ ul {
 .donations__title {
   margin: 0;
 }
-@media (min-width: 48em) {
+@media (min-width: 25em) {
   .donations__title {
     text-align: left;
   }
@@ -1332,7 +1401,7 @@ ul {
   line-height: 2.4rem;
   letter-spacing: normal;
 }
-@media (min-width: 48em) {
+@media (min-width: 25em) {
   .donate__bank {
     font-size: 1.5rem;
     line-height: 1.7rem;
@@ -1354,7 +1423,7 @@ ul {
   letter-spacing: 0.06em;
   white-space: nowrap;
 }
-@media (min-width: 48em) {
+@media (min-width: 25em) {
   .donate__card a {
     font-size: 2rem;
   }
@@ -1370,7 +1439,7 @@ ul {
   text-align: justify;
   color: var(--color-dark-m);
 }
-@media (min-width: 48em) {
+@media (min-width: 25em) {
   .donate__legal {
     text-align: left;
   }

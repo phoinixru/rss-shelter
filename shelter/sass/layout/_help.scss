@@ -23,17 +23,21 @@
   @include letter-spacing();
   color: var(--color-dark-l);
 
-  @include mq($from: 520px) {
+  @include mq($from: 550px) {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 55px 60px;
   }
 
-  @include mq($from: desktop) {
+  @include mq($from: tablet) {
+    gap: 5.5rem 6rem;
+    margin: 0 4rem;
+    @include font(2rem, 2.3rem);
+  }
+
+  @include mq($from: 1000px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5.5rem 12rem;
-    @include font(2rem, 2.3rem);
   }
 
   .icon {

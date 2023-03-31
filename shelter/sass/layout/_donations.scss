@@ -1,3 +1,6 @@
+$medium-width: 400px;
+$large-width: 995px;
+
 /* Section: donations */
 .donations__content {
   --bg-image-height-mobile: #{responsive-size(135, 261, mobile)};
@@ -12,10 +15,16 @@
   background: url("../../assets/backgrounds/donation-dog.png") 50% 100% no-repeat;
   background-size: auto var(--bg-image-height-mobile);
 
-  @include mq($from: desktop) {
+  @include mq($from: $medium-width) {
+    padding-right: calc(50% - 19rem);
+    padding-left: calc(50% - 19rem);
+  }
+
+  @include mq($from: $large-width) {
+    width: 91.5rem;
     min-height: 26.1rem;
     padding: 0 0 0 53.5rem;
-    margin: 0 14.3rem;
+    margin: auto;
     background-position: 0 50%;
     background-size: auto;
   }
@@ -28,7 +37,7 @@
 .donations__title {
   margin: 0;
 
-  @include mq($from: tablet) {
+  @include mq($from: $medium-width) {
     text-align: left;
   }
 }
@@ -41,7 +50,7 @@
   @include font(1.5rem, 2.4rem);
   @include letter-spacing(normal);
 
-  @include mq($from: tablet) {
+  @include mq($from: $medium-width) {
     @include font(1.5rem, 1.7rem);
     @include letter-spacing();
     text-align: left;
@@ -62,7 +71,7 @@
     letter-spacing: 0.06em;
     white-space: nowrap;
 
-    @include mq($from: tablet) {
+    @include mq($from: $medium-width) {
       font-size: 2rem;
     }
   }
@@ -79,7 +88,7 @@
   text-align: justify;
   color: var(--color-dark-m);
 
-  @include mq($from: tablet) {
+  @include mq($from: $medium-width) {
     text-align: left;
   }
 }
