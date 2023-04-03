@@ -12,9 +12,10 @@
   flex-direction: row;
   justify-content: space-around;
   overflow: hidden;
+  gap: 0;
   width: 100%;
-
   padding: 2rem 0;
+
 
   &>.slider__card:nth-child(n+2) {
     display: none;

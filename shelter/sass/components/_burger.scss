@@ -12,7 +12,12 @@
   &:after {
     content: '';
     height: 2px;
-    background: var(--color-primary);
+    background: var(--color-dark-4xl);
+
+    .page-main & {
+      background: var(--color-primary);
+
+    }
   }
 
   &:before {

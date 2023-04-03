@@ -9,6 +9,7 @@
   --color-dark-xl: #4C4C4C;
   --color-dark-2xl: #444444;
   --color-dark-3xl: #292929;
+  --color-dark-4xl: #000000;
   /* Primary colors */
   --color-primary: #F1CDB3;
   --color-primary-light: #FDDCC4;
@@ -421,7 +422,7 @@ body {
 }
 
 /* Styles from Figma */
-.logo__title, h5, .pet__name, h4, .page__title, h3, .start-screen__title, h2 {
+.logo__title, h5, .pet__name, .pagination, h4, .page__title, h3, .start-screen__title, h2 {
   font-weight: 400;
   letter-spacing: 0.06em;
 }
@@ -449,7 +450,7 @@ body {
   }
 }
 
-.pet__name, h4 {
+.pet__name, .pagination, h4 {
   font-size: 2rem;
   line-height: 2.3rem;
 }
@@ -677,6 +678,9 @@ ul {
 .burger-button i, .burger-button:before, .burger-button:after {
   content: "";
   height: 2px;
+  background: var(--color-dark-4xl);
+}
+.page-main .burger-button i, .page-main .burger-button:before, .page-main .burger-button:after {
   background: var(--color-primary);
 }
 .burger-button:before {
@@ -770,8 +774,6 @@ ul {
 
 /* Pagination */
 .pagination {
-  font: 2rem/2.3rem var(--ff-serif);
-  letter-spacing: 0.06em;
   text-align: center;
 }
 
@@ -780,22 +782,27 @@ ul {
   flex-wrap: nowrap;
   flex-flow: row;
   justify-content: center;
-  gap: 20px;
+  gap: 1rem;
+}
+@media (min-width: 48em) {
+  .pagination ul {
+    gap: 2rem;
+  }
 }
 
 .pagination__link {
   display: block;
   box-sizing: border-box;
-  width: 52px;
-  height: 52px;
-  line-height: 48px;
+  width: 5.2rem;
+  height: 5.2rem;
+  line-height: 4.8rem;
   border-width: 2px;
   border-style: solid;
   border-radius: 100%;
 }
 
 .pagination__link {
-  transition: all 0.5s;
+  transition: all 0.3s linear;
 }
 
 .pagination__link--disabled,
@@ -830,8 +837,8 @@ ul {
 .pets__cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px 0;
+  justify-content: center;
+  gap: 3rem 4rem;
 }
 
 .pet__card {
@@ -847,10 +854,10 @@ ul {
 
 .pet__link {
   display: flex;
-  padding-bottom: 30px;
+  padding-bottom: 3rem;
   flex-direction: column;
   align-items: center;
-  gap: 30px 0;
+  gap: 3rem 0;
 }
 .pet__link:hover .button {
   background-color: var(--color-primary-light);
@@ -883,6 +890,7 @@ ul {
   flex-direction: row;
   justify-content: space-around;
   overflow: hidden;
+  gap: 0;
   width: 100%;
   padding: 2rem 0;
 }
@@ -985,8 +993,18 @@ ul {
 .page__title {
   text-align: center;
   max-width: 40rem;
-  margin: 0 auto 6rem;
+  margin: 0 auto 4.2rem;
   color: var(--color-dark-l);
+}
+@media (min-width: 48em) {
+  .page__title {
+    margin-bottom: 3rem;
+  }
+}
+@media (min-width: 80em) {
+  .page__title {
+    margin-bottom: 6rem;
+  }
 }
 
 .section__title {
@@ -1446,6 +1464,32 @@ ul {
 }
 
 /* Section: our pets */
+.page-pets .pet__card {
+  display: none;
+}
+.page-pets .pet__card:nth-child(-n+3) {
+  display: block;
+}
+@media (min-width: 39.25em) {
+  .page-pets .pet__card:nth-child(-n+6) {
+    display: block;
+  }
+}
+@media (min-width: 80em) {
+  .page-pets .pet__card:nth-child(-n+8) {
+    display: block;
+  }
+}
 .page-pets .pagination {
-  margin-top: 60px;
+  margin-top: 4.2rem;
+}
+@media (min-width: 48em) {
+  .page-pets .pagination {
+    margin: 4rem 0 -2.4rem; /* Magic */
+  }
+}
+@media (min-width: 80em) {
+  .page-pets .pagination {
+    margin: 6rem 0 0;
+  }
 }/*# sourceMappingURL=main.css.map */
