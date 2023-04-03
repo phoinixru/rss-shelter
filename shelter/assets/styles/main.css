@@ -421,7 +421,7 @@ body {
 }
 
 /* Styles from Figma */
-.logo__title, h5, h4, .page__title, h3, .start-screen__title, h2 {
+.logo__title, h5, .pet__name, h4, .page__title, h3, .start-screen__title, h2 {
   font-weight: 400;
   letter-spacing: 0.06em;
 }
@@ -449,7 +449,7 @@ body {
   }
 }
 
-h4 {
+.pet__name, h4 {
   font-size: 2rem;
   line-height: 2.3rem;
 }
@@ -829,7 +829,6 @@ ul {
 
 .pets__cards {
   display: flex;
-  margin: auto;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px 0;
@@ -868,34 +867,42 @@ ul {
 
 .pet__name {
   display: block;
-  font: 400 20px/23px var(--ff-serif);
-  letter-spacing: 0.06em;
 }
 
 /* Slider modification of pets */
 .slider {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .slider__cards {
+  display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
+  justify-content: space-around;
   overflow: hidden;
-  width: 27rem;
+  width: 100%;
   padding: 2rem 0;
-  gap: 2.5rem;
+}
+.slider__cards > .slider__card:nth-child(n+2) {
+  display: none;
 }
 @media (min-width: 48em) {
   .slider__cards {
-    width: calc(540px + 11rem);
-    padding: 6rem 3.5rem;
-    gap: 4rem;
+    padding: 6rem 4.5rem;
+  }
+  .slider__cards > .slider__card:nth-child(2) {
+    display: block;
   }
 }
 @media (min-width: 80em) {
   .slider__cards {
-    width: 990px;
-    gap: 9rem;
+    padding: 6rem;
+  }
+  .slider__cards > .slider__card:nth-child(3) {
+    display: block;
   }
 }
 

@@ -1,27 +1,41 @@
 /* Slider modification of pets */
 .slider {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .slider__cards {
+  display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
+  justify-content: space-around;
   overflow: hidden;
+  width: 100%;
 
-  width: 27rem;
   padding: 2rem 0;
-  gap: 2.5rem;
+
+  &>.slider__card:nth-child(n+2) {
+    display: none;
+  }
 
   @include mq($from: tablet) {
-    width: calc(270px * 2 + 11rem);
-    padding: 6rem 3.5rem;
-    gap: 4rem;
+    padding: 6rem 4.5rem;
+
+    &>.slider__card:nth-child(2) {
+      display: block;
+    }
   }
 
   @include mq($from: desktop) {
-    width: calc(270px * 3 + 180px);
-    gap: 9rem;
+    padding: 6rem;
+
+    &>.slider__card:nth-child(3) {
+      display: block;
+    }
   }
+
 }
 
 .slider__pagination {
