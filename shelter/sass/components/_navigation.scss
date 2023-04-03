@@ -17,7 +17,7 @@
   justify-content: space-between;
 
   @include mq($from: mobile) {
-    // display: flex;
+    display: flex;
     width: 100%;
     flex-direction: column;
     gap: 0;
@@ -38,10 +38,10 @@
   font-size: 1.5rem;
   line-height: 2.4rem;
   color: var(--color-dark-l);
-  
+
   @include transition();
 
-  &::after {
+  &:after {
     content: '';
     display: block;
     height: 0.3rem;
