@@ -1,5 +1,9 @@
-$medium-width: 540;
-$large-width: 900;
+$medium-width: 540px;
+$large-width: 900px;
+
+$dog-height-mobile: 272;
+$dog-height-tablet: 593;
+$dog-height-desktop: 728;
 
 /* Start screen */
 .start-screen {
@@ -14,15 +18,15 @@ $large-width: 900;
 }
 
 .start-screen .wrapper {
-  --bg-image-height-mobile: #{responsive-size(272, 593, mobile)};
-  --padding-bottom-mobile: #{responsive-size(272 + 105, 593 + 100, mobile)};
-  --bg-image-height-tablet: #{responsive-size(593, 728, tablet)};
+  --bg-image-height-mobile: #{responsive-size($dog-height-mobile, $dog-height-tablet, mobile)};
+  --padding-bottom-mobile: #{responsive-size($dog-height-mobile + 105, $dog-height-tablet + 100, mobile)};
+  --bg-image-height-tablet: #{responsive-size($dog-height-tablet, $dog-height-desktop, tablet)};
 
   display: flex;
-  padding: 3rem 0 37.7rem;
+  padding: 3rem 0 calc(($dog-height-mobile + 105) * 1rem / 10);
 
   background: url('../../assets/backgrounds/start-screen-puppy.png') 100% 100% no-repeat;
-  background-size: auto 27.2rem;
+  background-size: auto calc($dog-height-mobile * 1rem / 10);
 
   @include mq($from: mobile) {
     padding-bottom: var(--padding-bottom-mobile);
@@ -30,7 +34,7 @@ $large-width: 900;
   }
 
   @include mq($from: desktop) {
-    min-height: 72.8rem;
+    min-height: calc($dog-height-desktop * 1rem / 10);
     padding: 0;
     background-size: auto;
   }
@@ -44,7 +48,7 @@ $large-width: 900;
   flex-direction: column;
   align-self: center;
   align-items: center;
-  gap: 42px;
+  gap: 4.2rem;
 
   text-align: center;
 
@@ -63,6 +67,7 @@ $large-width: 900;
 }
 
 .start-screen__title {
+  @extend %h2;
   @include letter-spacing();
   color: var(--color-light-xl);
 
@@ -70,7 +75,7 @@ $large-width: 900;
 
   @include mq($from: $medium-width) {
     padding: 0;
-    margin-right: 150px;
+    margin-right: 15rem;
     @include font(4.4rem, 5.7rem);
     @include letter-spacing(normal);
   }
