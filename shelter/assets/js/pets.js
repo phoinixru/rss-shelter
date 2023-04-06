@@ -1,4 +1,4 @@
-const PETS = [
+export default [
   {
     "name": "Jennifer",
     "img": "../../assets/images/jennifer.png",
