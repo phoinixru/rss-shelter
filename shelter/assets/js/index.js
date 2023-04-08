@@ -1,4 +1,4 @@
-import PETS from './pets.js';
+import PETS from './pets_data.js';
 
 const qs = (selector, element = document) => element.querySelector(selector);
 const qsa = (selector, element = document) => [...element.querySelectorAll(selector)];
@@ -26,6 +26,9 @@ function initialize() {
 
   // Our pets page
   Pets.init();
+
+  // Pet modals
+  PetModal.init();
 }
 
 
@@ -196,7 +199,7 @@ const Pets = {
   firstCardIdx: 0,
 
   init() {
-    const container = qs('#pets');
+    const container = qs('#pets-container');
     if (!container) {
       return;
     }
@@ -337,3 +340,96 @@ const Pets = {
     qs('.pagination__page', container).innerText = currentPage;
   }
 }
+
+const petInfo = (id) => {
+  const { name, img, type, breed, description, age, inoculations, diseases, parasites } = PETS[id];
+  const list = (arr) => arr ? arr.join`, ` : false;
+  const field = ([field, value]) => `<li><strong>${field}:</strong> ${value}</li>`;
+
+  const fields = entries({
+    'Age': age,
+    'Inoculations': list(inoculations),
+    'Diseases': list(diseases),
+    'Parasites': list(parasites)
+  }).filter(([, v]) => v);
+
+  const listInfo = fields.length ? `<ul class="pet-info__list">${fields.map(field).join``}</ul>` : '';
+
+  return `<div class="pet-info">
+    <div class="pet-info__photo"><img src="${img}" alt="${name}'s photo"></div>
+    <div class="pet-info__text">
+      <h3 class="pet-info__name">${name}</h3>
+      <h4 class="pet-info__breed">${type} - ${breed}</h4>
+      <p class="pet-info__description">${description}</p>
+      ${listInfo}
+    </div>
+  </div>`;
+};
+
+
+// Modal window
+const PetModal = {
+  init() {
+    this.addCardClickHandlers();
+  },
+
+  addCardClickHandlers() {
+    qs('.pets').addEventListener('click', e => this.handleCardClick(e));
+  },
+
+  handleCardClick(event) {
+    event.preventDefault();
+
+    const { target } = event;
+    const petCard = target.closest('.pet__card');
+
+    if (!petCard) {
+      return;
+    }
+
+    const petId = +petCard.dataset.id;
+    this.show(petId);
+  },
+
+  show(petId) {
+    if (qs('#modal')) {
+      return;
+    }
+
+    const content = petInfo(petId);
+    this.buildModal(content);
+  },
+
+  buildModal(content) {
+    const overlay = elt('div', { id: 'modal', className: 'modal' });
+    const btnClose = elt('button', {
+      className: 'button button-secondary modal__close-button',
+      innerHTML: '<i class="icon icon-cross"></i>'
+    });
+
+    const popup = elt('div', { className: 'modal__popup' },
+      elt('div', { className: 'modal__content', innerHTML: content }),
+      btnClose
+    );
+
+    overlay.addEventListener('click', e => this.handleClicks(e));
+
+    overlay.append(popup);
+    document.body.append(overlay);
+
+    document.body.classList.add('has-modal');
+  },
+
+  handleClicks(event) {
+    const { target } = event;
+    const btnClose = target.closest('.modal__close-button');
+    const overlay = target.closest('.modal');
+
+    if (!(target === overlay || btnClose)) {
+      return;
+    }
+
+    overlay.remove();
+    document.body.classList.remove('has-modal');
+  }
+};
