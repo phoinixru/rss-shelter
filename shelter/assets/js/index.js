@@ -2,7 +2,7 @@ import PETS from './pets_data.js';
 
 const qs = (selector, element = document) => element.querySelector(selector);
 const qsa = (selector, element = document) => [...element.querySelectorAll(selector)];
-const { entries, keys, values, assign, fromEntries } = Object;
+const { entries, keys } = Object;
 
 function elt(type, props, ...children) {
   let dom = document.createElement(type);
@@ -18,7 +18,7 @@ window.addEventListener('load', initialize);
 
 function initialize() {
   // Burger menu
-  addBurgerMenuHandlers();
+  Burger.init();
 
   // Pet cards slider
   populateSlider();
@@ -33,37 +33,44 @@ function initialize() {
 
 
 // Burger menu
-const addBurgerMenuHandlers = (e) => {
-  qs('#burger-button').addEventListener('click', toggleBurgerMenu);
-  qs('.burger-navigation').addEventListener('click', handleBurgerClicks);
+const Burger = {
+  init() {
+    this.addBurgerMenuHandlers();
+    this.addMediaQueryHandlers();
+  },
 
+  addBurgerMenuHandlers() {
+    qs('#burger-button').addEventListener('click', e => this.toggleBurgerMenu(e));
+    qs('.burger-navigation').addEventListener('click', e => this.handleBurgerClicks(e));
+  },
 
-  // Switch off burger menu on media query
-  const mediaQueryList = window.matchMedia("(max-width: 768px)");
+  addMediaQueryHandlers() {
+    // Switch off burger menu on media query
+    const mediaQueryList = window.matchMedia("(max-width: 768px)");
 
-  function handleWidthChange(mqlEvent) {
-    const { matches } = mqlEvent;
+    this.handleWidthChange(mediaQueryList);
+    mediaQueryList.addEventListener("change", e => this.handleWidthChange(e));
+  },
+
+  handleWidthChange(mql) {
+    const { matches } = mql;
     if (!matches) {
       qs('body').classList.toggle('burger-open', false);
     }
-  }
+  },
 
-  handleWidthChange(mediaQueryList);
-  mediaQueryList.addEventListener("change", handleWidthChange);
-};
+  toggleBurgerMenu(event) {
+    qs('body').classList.toggle('burger-open');
+    event && event.preventDefault();
+  },
 
-const toggleBurgerMenu = (event) => {
-  qs('body').classList.toggle('burger-open');
-  event && event.preventDefault();
-}
+  handleBurgerClicks({ target }) {
+    const isOverlay = target.matches('.burger-navigation');
+    const isClickableLink = target.matches('.navigation__link') && !target.matches('.navigation__link--active');
 
-const handleBurgerClicks = (event) => {
-  const classList = event.target.classList;
-  const isOverlay = classList.contains('burger-navigation');
-  const isClickableLink = classList.contains('navigation__link') && !classList.contains('navigation__link--active');
-
-  if (isOverlay || isClickableLink) {
-    toggleBurgerMenu();
+    if (isOverlay || isClickableLink) {
+      this.toggleBurgerMenu();
+    }
   }
 }
 
