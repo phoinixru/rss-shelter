@@ -66,7 +66,7 @@ const Burger = {
 
   handleBurgerClicks({ target }) {
     const isOverlay = target.matches('.burger-navigation');
-    const isClickableLink = target.matches('.navigation__link') && !target.matches('.navigation__link--active');
+    const isClickableLink = target.matches('.navigation__link');
 
     if (isOverlay || isClickableLink) {
       this.toggleBurgerMenu();

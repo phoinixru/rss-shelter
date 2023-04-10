@@ -702,7 +702,13 @@ ul {
   color: var(--color-dark-l);
 }
 .navigation__link--active {
-  pointer-events: none;
+  margin-bottom: 0.3rem;
+}
+@media (min-width: 48em) {
+  .navigation__link--active {
+    pointer-events: none;
+    margin-bottom: 0;
+  }
 }
 .navigation__link--active:after {
   visibility: visible;
