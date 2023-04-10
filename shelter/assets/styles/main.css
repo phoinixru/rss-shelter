@@ -1081,9 +1081,19 @@ body.has-modal {
 }
 
 .pet-info {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: grid;
+}
+@media (min-width: 48em) {
+  .pet-info {
+    max-width: 63rem;
+    grid-template-columns: 35rem 1fr;
+  }
+}
+@media (min-width: 80em) {
+  .pet-info {
+    max-width: 90rem;
+    grid-template-columns: 50rem 1fr;
+  }
 }
 
 .pet-info__photo {
@@ -1096,32 +1106,19 @@ body.has-modal {
 @media (min-width: 48em) {
   .pet-info__photo {
     display: block;
-    max-width: 35rem;
-  }
-}
-@media (min-width: 80em) {
-  .pet-info__photo {
-    max-width: 50rem;
   }
 }
 
 .pet-info__text {
-  margin: 1rem;
+  padding: 1rem;
 }
 .pet-info__text > * {
   margin: 0;
   color: var(--color-dark-4xl);
 }
-@media (min-width: 48em) {
-  .pet-info__text {
-    width: 26rem;
-    margin: 1rem;
-  }
-}
 @media (min-width: 80em) {
   .pet-info__text {
-    width: 35rem;
-    margin: 5rem 2rem 0 3rem;
+    padding: 5rem 2rem 0 3rem;
   }
 }
 
@@ -1154,6 +1151,7 @@ body.has-modal {
 
 .pet-info__description {
   margin-bottom: 2.5rem;
+  margin-right: -0.1rem;
   font-family: var(--font-serif);
   text-align: justify;
   font-size: 1.3rem;

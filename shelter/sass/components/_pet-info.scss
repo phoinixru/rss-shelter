@@ -1,7 +1,16 @@
 .pet-info {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: grid;
+
+  @include mq($from: tablet) {
+    max-width: 63rem;
+    grid-template-columns: 35rem 1fr;
+  }
+
+  @include mq($from: desktop) {
+    max-width: 90rem;
+    grid-template-columns: 50rem 1fr;
+  }
+
 }
 
 .pet-info__photo {
@@ -14,30 +23,19 @@
 
   @include mq($from: tablet) {
     display: block;
-    max-width: 35rem;
-  }
-
-  @include mq($from: desktop) {
-    max-width: 50rem;
   }
 }
 
 .pet-info__text {
-  margin: 1rem;
+  padding: 1rem;
 
   &>* {
     margin: 0;
     color: var(--color-dark-4xl);
   }
 
-  @include mq($from: tablet) {
-    width: 26rem;
-    margin: 1rem;
-  }
-
   @include mq($from: desktop) {
-    width: 35rem;
-    margin: 5rem 2rem 0 3rem;
+    padding: 5rem 2rem 0 3rem;
   }
 }
 
@@ -66,6 +64,7 @@
 
 .pet-info__description {
   margin-bottom: 2.5rem;
+  margin-right: -0.1rem;;
   font-family: var(--font-serif);
   text-align: justify;
 
