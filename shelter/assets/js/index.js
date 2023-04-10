@@ -21,8 +21,7 @@ function initialize() {
   Burger.init();
 
   // Pet cards slider
-  populateSlider();
-  addSliderPaginationHandlers();
+  PetsSlider.init();
 
   // Our pets page
   Pets.init();
@@ -76,43 +75,14 @@ const Burger = {
 
 
 // Slider
-const shuffle = () => Math.random() - 0.5;
 const petIds = keys(PETS);
+const shuffle = () => Math.random() - 0.5;
 const pickCards = (exclude = [], number = 3) => {
   return petIds
     .filter(id => !exclude.includes(id))
     .sort(shuffle)
     .slice(0, number);
 };
-
-const populateSlider = () => {
-  const slider = qs('.slider');
-  if (!slider) {
-    return;
-  }
-
-  qs('.slider__slides', slider).innerHTML = '';
-  let cardIds = [];
-  for (let slideId = 0; slideId < 3; slideId++) {
-    cardIds = pickCards(cardIds);
-    renderSlide(slideId, cardIds);
-  }
-}
-
-const renderSlide = (slideId, cardIds) => {
-  const slider = qs('.slider');
-  let slide = qs(`.slider__slide[data-id="${slideId}"]`);
-
-  if (!slide) {
-    slide = elt('div', { className: 'slider__slide' });
-    slide.dataset.id = slideId;
-    qs('.slider__slides', slider).append(slide);
-  }
-
-  const sliderCard = (id) => `<li class="pet__card slider__card" data-id="${id}">${generatePetCard(id)}</li>`;
-
-  slide.innerHTML = `<ul class="pets__cards slider__cards">${cardIds.map(sliderCard).join`\n`}</ul>`;
-}
 
 const generatePetCard = (id) => {
   const { name, img } = PETS[id];
@@ -124,75 +94,115 @@ const generatePetCard = (id) => {
     <strong class="pet__name">${name}</strong>
     <span class="button button-secondary">Learn more</span>
   </a>`;
-}
-
-let sliderInTransition = false;
-
-const addSliderPaginationHandlers = () => {
-  const sliderPagination = qs('.slider__pagination');
-  if (!sliderPagination) {
-    return;
-  }
-
-  sliderPagination.addEventListener('click', changeSlide);
-
-  qs(".slider__slides").addEventListener("transitionend", updateSlidesAfterTransition);
 };
 
 
-const changeSlide = (event) => {
-  event.preventDefault();
+const PetsSlider = {
+  isInTransition: false,
 
-  const button = event.target.closest('.slider__nav');
-  if (!button || sliderInTransition) {
-    return;
-  }
+  init() {
+    const container = qs('.slider');
+    if (!container) {
+      return;
+    }
 
-  sliderInTransition = true;
+    this.container = container;
 
-  const direction = button.matches('.slider__prev') ? 'prev' : 'next';
+    this.populateSlider();
+    this.addPaginationHandlers();
+  },
 
-  qs('.slider').classList.toggle('show_next', direction === 'next');
-  qs('.slider').classList.toggle('show_prev', direction === 'prev');
-}
+  populateSlider() {
+    qs('.slider__slides', this.container).innerHTML = '';
 
+    let cardIds = [];
+    for (let i = 0; i < 3; i++) {
+      cardIds = pickCards(cardIds);
+      this.renderSlide(i, cardIds);
+    }
+  },
 
-const updateSlidesAfterTransition = (event) => {
-  const { target } = event;
+  renderSlide(slideId, cardIds) {
+    let slide = qs(`.slider__slide[data-id="${slideId}"]`, this.container);
 
-  if (!target.matches('.slider__slide')) {
-    return;
-  }
+    if (!slide) {
+      slide = elt('div', { className: 'slider__slide' });
+      slide.dataset.id = slideId;
+      qs('.slider__slides', this.container).append(slide);
+    }
 
-  if (target.dataset.id === '1') {
-    // finish transition
-    qs('.slider').classList.remove('show_next', 'show_prev');
-    sliderInTransition = false;
-  } else {
-    // update slides
-    updateSlides(target);
+    const sliderCard = (id) => `<li class="pet__card slider__card" data-id="${id}">${generatePetCard(id)}</li>`;
+
+    slide.innerHTML = `<ul class="pets__cards slider__cards">${cardIds.map(sliderCard).join`\n`}</ul>`;
+  },
+
+  addPaginationHandlers() {
+    const sliderPagination = qs('.slider__pagination', this.container);
+    if (!sliderPagination) {
+      return;
+    }
+
+    sliderPagination.addEventListener('click', e => this.changeSlide(e));
+
+    const transitionend = e => this.updateSlidesAfterTransition(e)
+    qs(".slider__slides", this.container).addEventListener("transitionend", transitionend);
+  },
+
+  changeSlide(event) {
+    event.preventDefault();
+
+    const button = event.target.closest('.slider__nav');
+    if (!button || this.isInTransition) {
+      return;
+    }
+
+    this.isInTransition = true;
+
+    const direction = button.matches('.slider__prev') ? 'prev' : 'next';
+
+    this.container.classList.toggle('show_next', direction === 'next');
+    this.container.classList.toggle('show_prev', direction === 'prev');
+  },
+
+  updateSlidesAfterTransition(event) {
+    const { target } = event;
+
+    if (!target.matches('.slider__slide')) {
+      return;
+    }
+
+    if (target.dataset.id === '1') {
+      // finish transition
+      this.container.classList.remove('show_next', 'show_prev');
+      this.isInTransition = false;
+    } else {
+      // update slides
+      this.updateSlides(target);
+    }
+  },
+
+  updateSlides(fromSlide) {
+    const fromSlideId = +fromSlide.dataset.id;
+    const otherSlideId = fromSlideId == 2 ? 0 : 2;
+
+    const centerSlide = qs(`.slider__slide[data-id="1"]`, this.container);
+    const otherSlide = qs(`.slider__slide[data-id="${otherSlideId}"]`, this.container);
+
+    // move cards from center slide
+    otherSlide.innerHTML = '';
+    otherSlide.append(...centerSlide.children);
+
+    // put cards from new slide in center
+    centerSlide.innerHTML = '';
+    centerSlide.append(...fromSlide.children);
+
+    const excludeIds = qsa('.slider__card', centerSlide).map(card => card.dataset.id);
+    this.renderSlide(fromSlideId, pickCards(excludeIds));
   }
 };
 
-const updateSlides = (fromSlide) => {
-  const fromSlideId = +fromSlide.dataset.id;
-  const otherSlideId = fromSlideId == 2 ? 0 : 2;
 
-  const centerSlide = qs(`.slider__slide[data-id="1"]`);
-  const otherSlide = qs(`.slider__slide[data-id="${otherSlideId}"]`);
-
-  // move cards from center slide
-  otherSlide.innerHTML = '';
-  otherSlide.append(...centerSlide.children);
-
-  // put cards from new slide in center
-  centerSlide.innerHTML = '';
-  centerSlide.append(...fromSlide.children);
-
-  const excludeIds = qsa('.slider__card', centerSlide).map(card => card.dataset.id);
-  renderSlide(fromSlideId, pickCards(excludeIds));
-}
-
+// Pets page
 const Pets = {
   SIX_CARDS_BP: 628,
   EIGHT_CARDS_BP: 1280,
