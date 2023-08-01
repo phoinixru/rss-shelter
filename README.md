@@ -1,1 +1,1 @@
-[Shelter](https://rolling-scopes-school.github.io/phoinixru-JSFE2023Q1/shelter/pages/main/)
+[Shelter](https://phoinixru.github.io/rss-shelter/pages/main/)
