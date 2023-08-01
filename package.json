@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "publish": "npm run gh-pages -d shelter -m \"chore: update deploy\""
+    "publish": "gh-pages -d shelter -m \"chore: update deploy\""
   },
   "author": "",
   "license": "ISC",
